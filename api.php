@@ -78,7 +78,7 @@ Route::post('/v1/upload', function (Request $request) {
 Route::post('/v1/viewData', function (Request $request) {
 	
 	$id 				= $request->input('id');
-	$req_password 		= $request->input('password');
+	$req_password 			= $request->input('password');
 	
 	$dbReq				= DB::select('SELECT * FROM `notes` WHERE `randId`="'.$id.'"');
 	
@@ -93,7 +93,7 @@ Route::post('/v1/viewData', function (Request $request) {
 	$data				= $dbReq[0]->data;
 	$type				= $dbReq[0]->type;
 	$password			= $dbReq[0]->password;
-	$deleteAfterSeen	= $dbReq[0]->deleteAfterSeen;
+	$deleteAfterSeen		= $dbReq[0]->deleteAfterSeen;
 	
 	if(!empty($password)){
 		if($req_password !== $password){
