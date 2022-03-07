@@ -34,7 +34,7 @@ Route::post('/v1/upload', function (Request $request) {
 	$type 				= $request->input('type');
 	$time		 		= $request->input('time');
 	$password 	 		= $request->input('password');
-	$deleteAfterSeen 	= $request->input('deleteAfterSeen');
+	$deleteAfterSeen 		= $request->input('deleteAfterSeen');
 	$data 				= $request->input('data');
 	
 	$randStr 			= quickRandom(7);
